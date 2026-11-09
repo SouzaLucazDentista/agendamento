@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Lucas Souza | Canal e Botox em Recife</title>
+<meta name="description" content="Canal no mesmo dia, com raio-X no próprio consultório, e Botox com resultado natural. Dr. Lucas Souza, +1.000 pacientes atendidos. Madalena, Recife.">
+<meta property="og:title" content="Dr. Lucas Souza | Canal e Botox em Recife">
+<meta property="og:description" content="Chegou com dor, sai tratado. Raio-X e canal no mesmo atendimento.">
+<meta property="og:image" content="img/dr-lucas.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — edite só este bloco
+   ============================================================ */
+window.CONFIG = {
+  whatsapp: "558196606304",      // número com DDI+DDD, só dígitos
+  cro: "CRO-PE 14892",            // OBRIGATÓRIO por norma do CFO
+  pixelId: "",                    // ID do Pixel da Meta (deixe "" para desligar)
+  webhookUrl: "",                 // opcional: URL do Apps Script / Make / Zapier p/ salvar leads
+  showPrices: true,               // false esconde "a partir de R$..." (ver nota CFO)
+  precoCanal: "700",
+  precoBotox: "800"
+};
+</script>
+
+<style>
+:root{
+  --black:#000;
+  --ink:#0d1020;
+  --navy:#1e2a5e;
+  --navy-2:#2b3a80;
+  --navy-soft:#e9ecf7;
+  --text:#1b1e2b;
+  --muted:#5d6275;
+  --line:#e3e5ee;
+  --bg:#f7f7fa;
+  --white:#fff;
+  --wa:#1fae5b;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Montserrat",system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.hidden{display:none!important}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--black);color:#fff;padding:18px 0 44px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -20% -40% -20%;height:60%;background:radial-gradient(ellipse at center,rgba(43,58,128,.45),transparent 70%);pointer-events:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.topbar .logo{width:170px;height:84px;overflow:hidden;margin-left:-14px}
+.topbar .logo img{width:170px;height:170px;margin-top:-38px}
+.topbar .loc{font-size:12px;color:#aab0cc;text-align:right;letter-spacing:.02em}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:14px;position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9fb0ff;border:1px solid rgba(159,176,255,.35);padding:6px 12px;border-radius:99px}
+h1{font-size:30px;line-height:1.18;font-weight:600;margin:16px 0 12px;letter-spacing:-.01em}
+h1 em{font-style:normal;color:#9fb0ff}
+.lead{color:#c9cde0;font-size:16px;max-width:520px}
+.doc-card{display:flex;gap:14px;align-items:center;margin-top:22px}
+.doc-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:2px solid #2b3a80}
+.doc-card strong{display:block;font-size:15px}
+.doc-card span{font-size:13px;color:#aab0cc}
+.photo{display:none}
+
+/* quiz card */
+.quiz{background:#fff;color:var(--text);border-radius:22px;padding:22px 18px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.quiz-step{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.q-progress{display:flex;gap:6px;margin-bottom:16px}
+.q-progress i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.q-progress i.on{background:var(--navy)}
+.q-title{font-size:19px;font-weight:600;line-height:1.3;margin-bottom:4px}
+.q-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px;font-size:15px;font-weight:500;color:var(--text);transition:.15s}
+.opt:hover,.opt:focus-visible{border-color:var(--navy);background:var(--navy-soft);outline:none}
+.opt .ic{flex:0 0 42px;height:42px;border-radius:12px;background:var(--navy-soft);display:grid;place-items:center;color:var(--navy)}
+.opt.big{padding:18px 14px}
+.opt.big b{display:block;font-size:16px}
+.opt.big small{display:block;font-size:12.5px;color:var(--muted);font-weight:400;margin-top:2px}
+.opt .arrow{margin-left:auto;color:var(--navy);opacity:.6}
+.back{background:none;border:0;color:var(--muted);font-size:13px;margin-top:14px;padding:4px 0}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:12px;color:var(--muted)}
+.trust span::before{content:"✓ ";color:var(--navy);font-weight:700}
+
+/* ---------- RESULT ---------- */
+.section{padding:56px 0}
+.section.white{background:#fff}
+.section.dark{background:var(--ink);color:#fff}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--navy-2)}
+.dark .kicker{color:#9fb0ff}
+h2{font-size:26px;line-height:1.22;font-weight:600;margin:10px 0 12px;letter-spacing:-.01em}
+.sec-lead{color:var(--muted);font-size:15.5px;max-width:640px}
+.dark .sec-lead{color:#c3c7da}
+
+.diag{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:14px;padding:18px;margin-top:22px;font-size:15px}
+.diag strong{color:var(--navy)}
+
+.cases{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px}
+.case{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.pair figure,.single{position:relative;background:#eee}
+.pair img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.single img{width:100%;height:auto}
+.tag{position:absolute;top:10px;left:10px;background:rgba(13,16,32,.85);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:6px}
+.tag.r{left:auto;right:10px}
+.tag.after{background:var(--navy)}
+.case-body{padding:14px 16px 16px}
+.case-body b{display:block;font-size:15px}
+.case-body p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.disclaimer{font-size:12px;color:var(--muted);margin-top:14px}
+
+.steps{display:grid;gap:14px;margin-top:26px}
+.step{display:flex;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px}
+.step .n{flex:0 0 38px;height:38px;border-radius:50%;background:var(--navy-2);display:grid;place-items:center;font-weight:700}
+.step b{display:block;font-size:16px;margin-bottom:2px}
+.step p{font-size:14px;color:#c3c7da}
+
+.compare{display:grid;grid-template-columns:1fr;gap:12px;margin-top:22px}
+.cmp{border-radius:16px;padding:18px;font-size:14px}
+.cmp h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.cmp ul{list-style:none;display:grid;gap:8px}
+.cmp.bad{background:#f3f3f6;color:#61667a}
+.cmp.bad li::before{content:"✕  ";color:#b24a4a;font-weight:700}
+.cmp.good{background:var(--navy);color:#fff}
+.cmp.good li::before{content:"✓  ";color:#9fb0ff;font-weight:700}
+
+.offer{background:#fff;border:1.5px solid var(--navy);border-radius:22px;padding:24px 20px;margin-top:8px;box-shadow:0 18px 50px rgba(30,42,94,.12)}
+.offer .price{font-size:14px;color:var(--muted);margin-top:6px}
+.offer .price b{font-size:34px;color:var(--navy);font-weight:700;letter-spacing:-.02em}
+.offer ul{list-style:none;display:grid;gap:8px;margin:16px 0 4px;font-size:14.5px}
+.offer li::before{content:"✓  ";color:var(--navy);font-weight:700}
+.offer .note{font-size:12px;color:var(--muted);margin-top:8px}
+
+form .field{margin-top:12px}
+form label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+form input{width:100%;font:inherit;font-size:16px;padding:14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--text)}
+form input:focus{outline:none;border-color:var(--navy)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:9px 14px;font-size:14px;font-weight:500;color:var(--text)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.err{color:#b24a4a;font-size:12.5px;margin-top:6px;min-height:1em}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:18px;background:var(--wa);color:#fff;border:0;border-radius:14px;padding:17px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px rgba(31,174,91,.3);transition:transform .12s}
+.btn-wa:active{transform:scale(.98)}
+.safe{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+
+.about{display:grid;grid-template-columns:1fr;gap:24px;align-items:center}
+.about img{border-radius:22px;width:100%;max-height:520px;object-fit:cover;object-position:50% 20%}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.stat{background:var(--navy-soft);border-radius:14px;padding:14px 10px;text-align:center}
+.stat b{display:block;font-size:20px;color:var(--navy)}
+.stat span{font-size:11.5px;color:var(--muted);line-height:1.3;display:block;margin-top:2px}
+
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--line);margin-top:20px;background:#ddd}
+.map iframe{width:100%;height:280px;border:0;display:block}
+.addr{display:flex;gap:12px;align-items:flex-start;margin-top:16px;font-size:14.5px}
+.addr a{color:var(--navy);font-weight:600}
+
+.faq{margin-top:22px;display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 16px}
+.faq summary{list-style:none;padding:14px 0;font-weight:600;font-size:15px;display:flex;justify-content:space-between;gap:12px;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--navy);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:14px;color:var(--muted);padding-bottom:14px}
+
+footer{background:var(--black);color:#8e93ab;font-size:12px;padding:28px 0 100px;text-align:center;line-height:1.7}
+footer b{color:#fff;font-weight:500}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:50;transform:translateY(110%);transition:transform .25s}
+.sticky.show{transform:none}
+.sticky .btn-wa{margin:0;padding:14px}
+
+@media (min-width:860px){
+  .hero{padding:22px 0 70px}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;margin-top:26px}
+  h1{font-size:44px}
+  .photo{display:block;position:relative}
+  .photo img{border-radius:24px;max-height:420px;width:100%;object-fit:cover;object-position:50% 15%}
+  .photo .badge{position:absolute;left:-18px;bottom:22px;background:#fff;color:var(--ink);padding:12px 16px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .photo .badge b{display:block;font-size:22px;color:var(--navy)}
+  .photo .badge span{font-size:12px;color:var(--muted)}
+  .doc-card{display:none}
+  .left-col .quiz{margin-top:26px}
+  h2{font-size:34px}
+  .cases{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .step{flex-direction:column}
+  .compare{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:.9fr 1.1fr;gap:48px}
+  .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+  .sticky{display:none}
+  footer{padding-bottom:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO + QUIZ ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo"><img src="img/logo.jpg" alt="Lucas Souza — Clínica Geral e Endodontia"></div>
+      <div class="loc">Madalena · Recife/PE<br>Atendimento na Dentix</div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="left-col">
+        <span class="eyebrow">+1.000 pacientes atendidos</span>
+        <h1 id="heroTitle">Seu tratamento <em>completo</em>, no mesmo lugar e sem enrolação.</h1>
+        <p class="lead" id="heroLead">Responda 3 perguntas rápidas e veja casos reais parecidos com o seu, valores e como funciona o atendimento.</p>
+
+        <div class="doc-card">
+          <img src="img/dr-lucas.jpg" alt="Dr. Lucas Souza">
+          <div><strong>Dr. Lucas Souza</strong><span>Clínica geral, endodontia e harmonização</span></div>
+        </div>
+
+        <div class="quiz" id="quiz" style="margin-top:22px">
+          <!-- passos renderizados via JS -->
+        </div>
+      </div>
+
+      <div class="photo">
+        <img src="img/dr-lucas.jpg" alt="Dr. Lucas Souza no consultório">
+        <div class="badge"><b>+1.000</b><span>pacientes atendidos</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= RESULTADO (aparece após o quiz) ================= -->
+<main id="result" class="hidden">
+
+  <!-- Diagnóstico personalizado + casos -->
+  <section class="section" id="casos">
+    <div class="wrap">
+      <span class="kicker" id="rKicker"></span>
+      <h2 id="rTitle"></h2>
+      <p class="sec-lead" id="rLead"></p>
+      <div class="diag" id="rDiag"></div>
+
+      <h2 style="margin-top:44px;font-size:24px">Casos reais tratados pelo Dr. Lucas</h2>
+      <p class="sec-lead">Fotos de pacientes, publicadas com autorização.</p>
+      <div class="cases" id="rCases"></div>
+      <p class="disclaimer">Resultados podem variar de pessoa para pessoa. Cada caso é avaliado individualmente.</p>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="section dark">
+    <div class="wrap">
+      <span class="kicker" id="hKicker"></span>
+      <h2 id="hTitle"></h2>
+      <p class="sec-lead" id="hLead"></p>
+      <div class="steps" id="hSteps"></div>
+      <div class="compare" id="hCompare"></div>
+    </div>
+  </section>
+
+  <!-- Oferta + formulário -->
+  <section class="section white" id="agendar">
+    <div class="wrap offer-grid">
+      <div>
+        <span class="kicker">Seu atendimento</span>
+        <h2 id="oTitle"></h2>
+        <p class="sec-lead" id="oLead"></p>
+        <div class="offer" style="margin-top:22px">
+          <b id="oName" style="font-size:17px"></b>
+          <div class="price" id="oPrice"></div>
+          <ul id="oList"></ul>
+          <p class="note" id="oNote"></p>
+        </div>
+      </div>
+
+      <div>
+        <form id="leadForm" novalidate class="offer" style="margin-top:22px">
+          <b style="font-size:18px">Garanta seu horário</b>
+          <p class="q-sub" style="margin:4px 0 0">Você será direcionado ao WhatsApp da clínica com tudo preenchido.</p>
+          <div class="field">
+            <label for="fNome">Seu nome</label>
+            <input id="fNome" name="nome" autocomplete="given-name" placeholder="Como podemos te chamar?">
+          </div>
+          <div class="field">
+            <label for="fTel">WhatsApp</label>
+            <input id="fTel" name="tel" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(81) 9 0000-0000">
+          </div>
+          <div class="field">
+            <label>Melhor período</label>
+            <div class="chips" id="fPeriodo">
+              <button type="button" class="chip" data-v="manhã">Manhã</button>
+              <button type="button" class="chip" data-v="tarde">Tarde</button>
+              <button type="button" class="chip" data-v="o quanto antes">O quanto antes</button>
+            </div>
+          </div>
+          <div class="err" id="fErr"></div>
+          <button class="btn-wa" type="submit">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            <span id="fBtn">Quero agendar pelo WhatsApp</span>
+          </button>
+          <p class="safe">🔒 Seus dados são usados só para o agendamento.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="section">
+    <div class="wrap about">
+      <img src="img/dr-lucas.jpg" alt="Dr. Lucas Souza" loading="lazy">
+      <div>
+        <span class="kicker">Quem vai cuidar de você</span>
+        <h2>Dr. Lucas Souza</h2>
+        <p class="sec-lead">Cirurgião-dentista com atuação em clínica geral, endodontia (tratamento de canal) e harmonização orofacial. Mais de mil pacientes atendidos com um princípio simples: explicar tudo com clareza, resolver o problema de verdade e respeitar o seu tempo.</p>
+        <div class="stats">
+          <div class="stat"><b>+1.000</b><span>pacientes atendidos</span></div>
+          <div class="stat"><b>Raio-X</b><span>no próprio consultório</span></div>
+          <div class="stat"><b>1 visita</b><span>diagnóstico e tratamento</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localização -->
+  <section class="section white">
+    <div class="wrap">
+      <span class="kicker">Onde fica</span>
+      <h2>Na Madalena, fácil de chegar</h2>
+      <div class="addr">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e2a5e" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>Dentix</b><br>Av. Visc. de Albuquerque, 862 — Madalena, Recife/PE · CEP 50610-090<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Visc.+de+Albuquerque,+862+-+Madalena,+Recife+-+PE,+50610-090" target="_blank" rel="noopener">Abrir rota no Google Maps →</a></div>
+      </div>
+      <div class="map">
+        <iframe loading="lazy" title="Mapa da clínica" src="https://www.google.com/maps?q=Av.+Visc.+de+Albuquerque,+862+-+Madalena,+Recife+-+PE,+50610-090&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Dúvidas frequentes</span>
+      <h2>Antes de vir, você pode estar se perguntando…</h2>
+      <div class="faq" id="rFaq"></div>
+      <a href="#agendar" class="btn-wa" style="max-width:420px">Agendar meu horário</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>Dr. Lucas Souza</b> · Cirurgião-dentista · <span id="cro"></span><br>
+  Clínica Geral, Endodontia e Harmonização Orofacial<br>
+  Av. Visc. de Albuquerque, 862 — Madalena, Recife/PE<br>
+  Resultados podem variar de pessoa para pessoa.
+</footer>
+
+<div class="sticky" id="sticky"><a href="#agendar" class="btn-wa" id="stickyBtn">Agendar pelo WhatsApp</a></div>
+
+<script>
+(function(){
+const C = window.CONFIG;
+document.getElementById('cro').textContent = C.cro;
+
+/* ---------- Meta Pixel (carrega só se houver ID) ---------- */
+if (C.pixelId){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', C.pixelId); fbq('track','PageView');
+}
+const track = (ev, data) => { try{ window.fbq && fbq('track', ev, data||{}); }catch(e){} };
+
+/* ---------- Ícones ---------- */
+const I = {
+  tooth:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 2.5 6.5s1.5-4 2.5-6c.5-1 1.5-1 2 0 1 2 1 6 2.5 6s2-3.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg>',
+  face:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8.5 9.5h.01M15.5 9.5h.01M8.5 15c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5"/><path d="M7 6.5c1.5-.7 3.2-1 5-1s3.5.3 5 1"/></svg>',
+  arrow:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>'
+};
+
+/* ---------- Conteúdo por serviço ---------- */
+const S = {
+  canal: {
+    label: 'Tratamento de canal',
+    msgLabel: 'tratamento de canal',
+    questions: [
+      { k:'sintoma', t:'O que você está sentindo?', s:'Escolha a opção mais próxima.',
+        o:['Dor forte, latejante','Dor ao mastigar ou com gelado/quente','Dente quebrado ou escurecido','Já me indicaram canal'] },
+      { k:'tempo', t:'Há quanto tempo isso está acontecendo?', s:'Isso ajuda o Dr. Lucas a se preparar para o seu caso.',
+        o:['Começou hoje ou ontem','Há alguns dias','Há mais de uma semana'] }
+    ],
+    hero: 'Dor de dente? <em>Raio-X e canal no mesmo dia</em>, sem precisar voltar.',
+    kicker: 'Seu caso tem solução',
+    title: 'Dá para resolver isso em uma única visita.',
+    lead: 'Você não precisa pedir exame em outro lugar, esperar resultado e marcar outra consulta para só então começar. Aqui o raio-X é feito na hora e o tratamento começa no mesmo atendimento.',
+    diag: a => {
+      const t = {
+        'Dor forte, latejante':'Dor forte e latejante costuma indicar que a inflamação já chegou ao nervo do dente — exatamente o que o tratamento de canal resolve.',
+        'Dor ao mastigar ou com gelado/quente':'Sensibilidade ao mastigar ou a temperaturas é um dos sinais mais comuns de que o nervo do dente está comprometido.',
+        'Dente quebrado ou escurecido':'Dente quebrado ou escurecido muitas vezes esconde um problema no nervo. O raio-X mostra na hora o que está acontecendo por dentro.',
+        'Já me indicaram canal':'Se já te indicaram canal, você pode vir direto: o raio-X é refeito aqui mesmo e o tratamento começa no mesmo dia.'
+      }[a.sintoma];
+      const u = {
+        'Começou hoje ou ontem':' Quanto antes tratar, mais simples tende a ser — e você para de sentir dor mais rápido.',
+        'Há alguns dias':' Não vale a pena esperar piorar: dor de dente raramente some sozinha.',
+        'Há mais de uma semana':' Uma semana com dor já é tempo demais. A boa notícia: você pode sair daqui tratado.'
+      }[a.tempo];
+      return '<strong>Pelo que você contou:</strong> ' + t + u + ' <br><small style="color:var(--muted)">A avaliação final é sempre feita pelo Dr. Lucas no consultório.</small>';
+    },
+    cases: [
+      { a:'img/canal-rx-antes.jpg', b:'img/canal-rx-depois.jpg', la:'Antes', lb:'Depois', t:'Raio-X: antes e depois do canal', d:'Canal limpo, modelado e totalmente selado até a ponta da raiz.' },
+      { a:'img/reconstrucao-antes.jpg', b:'img/reconstrucao-depois.jpg', la:'Antes', lb:'Depois', t:'Dente fraturado devolvido à função', d:'Tratamento e reconstrução do dente, que voltou a mastigar normalmente.' },
+      { a:'img/canal-clinico-durante.jpg', b:'img/canal-clinico-depois.jpg', la:'Durante', lb:'Depois', t:'Do acesso ao canal à restauração final', d:'O dente é tratado por dentro e finalizado com restauração.' },
+      { a:'img/sorriso-antes.jpg', b:'img/sorriso-depois.jpg', la:'Antes', lb:'Depois', t:'Reabilitação do sorriso', d:'Clínica geral completa: além do canal, o Dr. Lucas cuida do sorriso como um todo.' }
+    ],
+    hKicker: 'Como funciona',
+    hTitle: 'Chegou com dor, sai tratado.',
+    hLead: 'O consultório tem estrutura e tecnologia para o atendimento completo — do exame ao tratamento — sem você precisar rodar a cidade.',
+    steps: [
+      ['Você chega','Não precisa trazer pedido de exame nem raio-X de outro lugar. É só vir.'],
+      ['Raio-X na hora','O exame é feito no próprio consultório e o Dr. Lucas te mostra o que está acontecendo no seu dente.'],
+      ['Canal no mesmo dia','Com o diagnóstico em mãos, o tratamento já começa no mesmo atendimento, com anestesia e conforto.']
+    ],
+    bad: ['Consulta para pedir o raio-X','Ir a uma clínica de radiologia','Esperar o resultado','Voltar outro dia para começar','Dias a mais sentindo dor'],
+    good: ['Uma única ida ao consultório','Raio-X feito ali mesmo','Diagnóstico na hora','Canal começa no mesmo dia','Você volta pra casa sem dor'],
+    oTitle: 'Resolva sua dor sem perder dias.',
+    oLead: 'Agende pelo WhatsApp e venha direto. A equipe confirma seu horário.',
+    oName: 'Tratamento de canal',
+    price: C.precoCanal,
+    oList: ['Raio-X feito no próprio consultório','Diagnóstico e tratamento no mesmo atendimento','Feito por especialista em endodontia','Mais de 1.000 pacientes atendidos'],
+    oNote: 'O valor final depende do dente (molares têm mais canais) e é informado antes de começar.',
+    faq: [
+      ['Canal dói?','O procedimento é feito com anestesia e costuma ser tranquilo. O que dói é a inflamação no nervo — e o canal é justamente o que tira essa dor.'],
+      ['Preciso levar raio-X ou pedido de exame?','Não. O raio-X é feito no próprio consultório, na hora.'],
+      ['Faço tudo no mesmo dia mesmo?','Na grande maioria dos casos, sim: raio-X, diagnóstico e canal no mesmo atendimento. Em infecções mais extensas pode ser preciso uma segunda sessão — o Dr. Lucas explica tudo antes.'],
+      ['Quanto custa?', C.showPrices ? 'A partir de R$ '+C.precoCanal+'. O valor exato depende do dente e é informado antes de começar, sem surpresa.' : 'O valor depende do dente e é informado antes de começar, sem surpresa. Chame no WhatsApp para saber mais.'],
+      ['Não seria melhor extrair o dente?','Sempre que possível, salvar o dente é a melhor escolha: extrair gera problemas de mastigação, movimentação dos outros dentes e custos maiores depois (como implante).']
+    ]
+  },
+
+  botox: {
+    label: 'Botox',
+    msgLabel: 'avaliação para Botox',
+    questions: [
+      { k:'regiao', t:'O que mais te incomoda hoje?', s:'Escolha a opção principal.',
+        o:['Linhas na testa','Ruga entre as sobrancelhas','Pés de galinha (canto dos olhos)','Quero avaliar o rosto todo'] },
+      { k:'experiencia', t:'Você já fez Botox antes?', s:'Sem resposta certa — é só para entender seu momento.',
+        o:['Nunca fiz, é a primeira vez','Já fiz e quero repetir','Já fiz e não gostei do resultado'] }
+    ],
+    hero: 'Botox com <em>resultado natural</em>: você rejuvenesce, sem cara de “feito”.',
+    kicker: 'Resultado natural',
+    title: 'Suavizar as linhas sem perder a sua expressão.',
+    lead: 'A aplicação é planejada para o seu rosto: a dose certa, nos pontos certos, por quem estuda a anatomia da face todos os dias.',
+    diag: a => {
+      const r = {
+        'Linhas na testa':'As linhas da testa estão entre as que melhor respondem ao Botox — elas suavizam bastante mantendo o movimento natural.',
+        'Ruga entre as sobrancelhas':'A ruga entre as sobrancelhas passa a impressão de cansaço ou braveza. Suavizá-la deixa o rosto mais leve e descansado.',
+        'Pés de galinha (canto dos olhos)':'Os pés de galinha suavizam muito bem com Botox, deixando o olhar mais jovem sem tirar o sorriso.',
+        'Quero avaliar o rosto todo':'Uma avaliação completa permite equilibrar testa, olhar e sobrancelhas para um resultado harmônico.'
+      }[a.regiao];
+      const e = {
+        'Nunca fiz, é a primeira vez':' Como é sua primeira vez, o Dr. Lucas explica cada etapa e começa com um planejamento conservador.',
+        'Já fiz e quero repetir':' Como você já conhece o procedimento, a avaliação é rápida e o plano parte do que funcionou para você.',
+        'Já fiz e não gostei do resultado':' Se o resultado anterior não ficou bom, a avaliação ajuda a entender o porquê e ajustar dose e pontos para um efeito natural.'
+      }[a.experiencia];
+      return '<strong>Pelo que você contou:</strong> ' + r + e + ' <br><small style="color:var(--muted)">A indicação final é feita na avaliação presencial.</small>';
+    },
+    cases: [
+      { single:'img/botox-antes-depois.webp', t:'Botox na testa e entre as sobrancelhas', d:'Linhas suavizadas com expressão preservada.' },
+      { single:'img/labial-antes-depois.webp', tags:true, t:'Harmonização: preenchimento labial', d:'Contorno e volume definidos de forma equilibrada.' }
+    ],
+    hKicker: 'Como funciona',
+    hTitle: 'Rápido, seguro e planejado para você.',
+    hLead: 'Tudo é feito no consultório, com avaliação individual e acompanhamento depois da aplicação.',
+    steps: [
+      ['Avaliação do rosto','O Dr. Lucas analisa sua expressão e define juntos o resultado que você quer.'],
+      ['Aplicação rápida','Procedimento rápido, com agulhas finas. Dá para voltar à rotina no mesmo dia.'],
+      ['Resultado natural','O efeito aparece em poucos dias e dura, em média, de 4 a 6 meses.']
+    ],
+    bad: ['Dose padrão para todo mundo','Rosto “congelado”','Sem avaliação da expressão','Sem retorno depois'],
+    good: ['Plano feito para o seu rosto','Movimento natural preservado','Profissional que domina a anatomia da face','Acompanhamento após a aplicação'],
+    oTitle: 'Rejuvenesça com naturalidade.',
+    oLead: 'Agende sua avaliação pelo WhatsApp. A equipe confirma o horário com você.',
+    oName: 'Botox (toxina botulínica)',
+    price: C.precoBotox,
+    oList: ['Avaliação individual da face','Aplicação rápida, volta à rotina no mesmo dia','Resultado natural, sem cara de “feito”','Mais de 1.000 pacientes atendidos'],
+    oNote: 'O valor final depende das áreas tratadas e é informado na avaliação.',
+    faq: [
+      ['Vou ficar com cara de “congelado”?','Não é esse o objetivo. A dose e os pontos são planejados para suavizar as linhas mantendo sua expressão.'],
+      ['Quando aparece o resultado?','O efeito começa a aparecer em poucos dias e fica completo em cerca de 15 dias.'],
+      ['Quanto tempo dura?','Em média, de 4 a 6 meses, variando de pessoa para pessoa.'],
+      ['Posso trabalhar no mesmo dia?','Sim. A maioria das pessoas volta à rotina logo após a aplicação, seguindo alguns cuidados simples que o Dr. Lucas passa.'],
+      ['Dentista pode aplicar Botox?','Sim. A harmonização orofacial é reconhecida pelo Conselho Federal de Odontologia, e o dentista domina a anatomia da face e da musculatura.'],
+      ['Quanto custa?', C.showPrices ? 'A partir de R$ '+C.precoBotox+'. O valor final depende das áreas tratadas.' : 'O valor depende das áreas tratadas e é informado na avaliação.']
+    ]
+  }
+};
+
+/* ---------- Estado ---------- */
+const state = { svc:null, ans:{}, step:0, periodo:'' };
+const params = new URLSearchParams(location.search);
+const utm = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].reduce((o,k)=>{ if(params.get(k)) o[k]=params.get(k); return o; },{});
+const quiz = document.getElementById('quiz');
+
+function progress(i,total){ return '<div class="q-progress">'+Array.from({length:total},(_,n)=>'<i class="'+(n<=i?'on':'')+'"></i>').join('')+'</div>'; }
+
+function renderChoice(){
+  state.svc=null; state.ans={}; state.step=0;
+  quiz.innerHTML = '<div class="quiz-step">'+progress(0,3)+
+    '<div class="q-title">Como o Dr. Lucas pode te ajudar hoje?</div>'+
+    '<div class="q-sub">Toque na opção e veja casos reais parecidos com o seu.</div>'+
+    '<div class="opts">'+
+      '<button class="opt big" data-svc="canal"><span class="ic">'+I.tooth+'</span><span><b>Estou com dor de dente / preciso de canal</b><small>Raio-X e tratamento no mesmo dia</small></span><span class="arrow">'+I.arrow+'</span></button>'+
+      '<button class="opt big" data-svc="botox"><span class="ic">'+I.face+'</span><span><b>Quero fazer Botox</b><small>Suavizar linhas com resultado natural</small></span><span class="arrow">'+I.arrow+'</span></button>'+
+    '</div>'+
+    '<div class="trust"><span>+1.000 pacientes</span><span>Raio-X no consultório</span><span>Madalena, Recife</span></div></div>';
+  quiz.querySelectorAll('[data-svc]').forEach(b=>b.onclick=()=>chooseService(b.dataset.svc));
+}
+
+function chooseService(svc){
+  state.svc=svc; state.step=0;
+  document.getElementById('heroTitle').innerHTML = S[svc].hero;
+  track('ViewContent',{content_name:S[svc].label});
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const d=S[state.svc], q=d.questions[state.step];
+  quiz.innerHTML = '<div class="quiz-step">'+progress(state.step+1,3)+
+    '<div class="q-title">'+q.t+'</div><div class="q-sub">'+q.s+'</div>'+
+    '<div class="opts">'+q.o.map(o=>'<button class="opt" data-v="'+o+'">'+o+'<span class="arrow">'+I.arrow+'</span></button>').join('')+'</div>'+
+    '<button class="back" id="backBtn">← Voltar</button></div>';
+  quiz.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{
+    state.ans[q.k]=b.dataset.v;
+    if(state.step < d.questions.length-1){ state.step++; renderQuestion(); }
+    else showResult();
+  });
+  document.getElementById('backBtn').onclick=()=>{ if(state.step>0){state.step--;renderQuestion();} else { renderChoice(); document.getElementById('heroTitle').innerHTML='Seu tratamento <em>completo</em>, no mesmo lugar e sem enrolação.'; } };
+}
+
+function caseHTML(c){
+  let media;
+  if(c.single){
+    media = '<div class="single"><img src="'+c.single+'" alt="'+c.t+'" loading="lazy">'+(c.tags?'<span class="tag">Antes</span><span class="tag r after">Depois</span>':'')+'</div>';
+  } else {
+    media = '<div class="pair"><figure><img src="'+c.a+'" alt="'+c.la+' — '+c.t+'" loading="lazy"><span class="tag">'+c.la+'</span></figure>'+
+            '<figure><img src="'+c.b+'" alt="'+c.lb+' — '+c.t+'" loading="lazy"><span class="tag after">'+c.lb+'</span></figure></div>';
+  }
+  return '<article class="case">'+media+'<div class="case-body"><b>'+c.t+'</b><p>'+c.d+'</p></div></article>';
+}
+
+function showResult(){
+  const d=S[state.svc], $=id=>document.getElementById(id);
+  $('rKicker').textContent=d.kicker; $('rTitle').textContent=d.title; $('rLead').textContent=d.lead;
+  $('rDiag').innerHTML=d.diag(state.ans);
+  $('rCases').innerHTML=d.cases.map(caseHTML).join('');
+  $('hKicker').textContent=d.hKicker; $('hTitle').textContent=d.hTitle; $('hLead').textContent=d.hLead;
+  $('hSteps').innerHTML=d.steps.map((s,i)=>'<div class="step"><span class="n">'+(i+1)+'</span><div><b>'+s[0]+'</b><p>'+s[1]+'</p></div></div>').join('');
+  $('hCompare').innerHTML='<div class="cmp bad"><h4>O caminho comum</h4><ul>'+d.bad.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>'+
+                          '<div class="cmp good"><h4>Com o Dr. Lucas</h4><ul>'+d.good.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>';
+  $('oTitle').textContent=d.oTitle; $('oLead').textContent=d.oLead; $('oName').textContent=d.oName;
+  $('oPrice').innerHTML = C.showPrices ? 'a partir de <b>R$ '+d.price+'</b>' : '';
+  $('oList').innerHTML=d.oList.map(x=>'<li>'+x+'</li>').join('');
+  $('oNote').textContent=d.oNote;
+  $('rFaq').innerHTML=d.faq.map(f=>'<details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>').join('');
+  $('fBtn').textContent = state.svc==='canal' ? 'Quero ser atendido hoje' : 'Quero agendar minha avaliação';
+
+  quiz.innerHTML='<div class="quiz-step">'+progress(2,3)+'<div class="q-title">Pronto! Veja abaixo os casos e como funciona ↓</div>'+
+    '<div class="q-sub" style="margin-bottom:0">Preparamos as informações com base nas suas respostas.</div>'+
+    '<button class="back" id="restart">← Recomeçar</button></div>';
+  document.getElementById('restart').onclick=()=>{ $('result').classList.add('hidden'); $('sticky').classList.remove('show'); renderChoice(); };
+
+  $('result').classList.remove('hidden');
+  $('sticky').classList.add('show');
+  track('ViewContent',{content_name:d.label+' - resultado'});
+  setTimeout(()=>$('casos').scrollIntoView({behavior:'smooth'}),150);
+}
+
+/* ---------- Formulário ---------- */
+const tel=document.getElementById('fTel');
+tel.addEventListener('input',()=>{
+  let v=tel.value.replace(/\D/g,'').slice(0,11);
+  if(v.length>6) v='('+v.slice(0,2)+') '+v.slice(2,v.length-4)+'-'+v.slice(-4);
+  else if(v.length>2) v='('+v.slice(0,2)+') '+v.slice(2);
+  tel.value=v;
+});
+document.querySelectorAll('#fPeriodo .chip').forEach(c=>c.onclick=()=>{
+  document.querySelectorAll('#fPeriodo .chip').forEach(x=>x.classList.remove('on'));
+  c.classList.add('on'); state.periodo=c.dataset.v;
+});
+
+document.getElementById('leadForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const nome=document.getElementById('fNome').value.trim();
+  const fone=tel.value.replace(/\D/g,'');
+  const err=document.getElementById('fErr');
+  if(nome.length<2){ err.textContent='Digite seu nome.'; return; }
+  if(fone.length<10){ err.textContent='Digite um WhatsApp válido com DDD.'; return; }
+  err.textContent='';
+  const d=S[state.svc];
+  const respostas=Object.values(state.ans).join(' / ');
+
+  const lead={ data:new Date().toISOString(), nome, whatsapp:fone, servico:d.label, respostas, periodo:state.periodo, ...utm };
+  if(C.webhookUrl){ try{ fetch(C.webhookUrl,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(lead)}); }catch(_){} }
+  track('Lead',{content_name:d.label});
+
+  let msg='Olá! Me chamo '+nome+' e vim pelo site. Quero agendar '+d.msgLabel+'.';
+  if(respostas) msg+='\n• '+Object.values(state.ans).join('\n• ');
+  if(state.periodo) msg+='\nMelhor período: '+state.periodo+'.';
+  window.location.href='https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(msg);
+});
+
+/* ---------- Início: ?s=canal ou ?s=botox pula a 1ª pergunta ---------- */
+renderChoice();
+const pre=(params.get('s')||'').toLowerCase();
+if(S[pre]) chooseService(pre);
+})();
+</script>
+</body>
+</html>
